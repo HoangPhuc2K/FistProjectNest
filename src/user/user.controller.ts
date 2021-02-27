@@ -1,5 +1,7 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ApiCreatedResponse, ApiForbiddenResponse, ApiNotFoundResponse} from '@nestjs/swagger';
+import { RolesGuard } from 'src/common/guard/roles.guard';
+import { LoggingInterceptor } from 'src/common/interceptor/logging.interceptor';
 import { CreateUserDto } from './user.dto';
 import { User } from './user.entity';
 import { UserService } from './user.service';
